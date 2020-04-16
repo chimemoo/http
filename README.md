@@ -40,6 +40,7 @@ $request->getUserAgent();
 $request->getIpAddress();
 $request->isSecure();
 $request->getQueryString();
+$request->getPath();
 ```
 
 Please note that both GET and POST parameters are merged together and accessible with `getParameter`.
