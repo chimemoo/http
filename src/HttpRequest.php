@@ -183,11 +183,14 @@ class HttpRequest implements Request
 
     /**
      * Return just the path
-     *
+     * Checking if the path_info is not found an will give '/'
      * @return string
      */
     public function getPath()
     {
+        if(!array_key_exists('PATH_INFO', $this->server)){
+            $this->server['PATH_INFO'] = '/';
+        }
         return strtok($this->getServerVariable('PATH_INFO'), '?');
     }
 
